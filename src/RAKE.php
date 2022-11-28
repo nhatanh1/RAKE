@@ -21,10 +21,10 @@ class RAKE
      *
      * @param string $stopwords_path Path to the file with stop words
      */
-    function __construct($stopwords_path)
+    function __construct($stopwords)
     {
-        $this->stopwords_path = $stopwords_path;
-        $this->stopwords_pattern = $this->build_stopwords_regex(); // lấy chuỗi biểu thức chính quy từ stopwords
+        // $this->stopwords_path = $stopwords_path;
+        $this->stopwords_pattern = $this->build_stopwords_regex($stopwords); // lấy chuỗi biểu thức chính quy từ stopwords
     }
 
     /**
@@ -155,9 +155,9 @@ class RAKE
     /**
      * Get loaded stop words and return regex containing each stop word
      */
-    private function build_stopwords_regex() //BUILD stop words thành biểu thức chính quy
+    private function build_stopwords_regex($stopwords) //BUILD stop words thành biểu thức chính quy
     {
-        $stopwords_arr = $this->load_stopwords();
+        $stopwords_arr = $stopwords;
         $stopwords_regex_arr = array();
 
         foreach ($stopwords_arr as $word) {
