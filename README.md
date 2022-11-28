@@ -17,7 +17,13 @@ composer require nanhh/rake
 ## Usage
 
 ```php
-// Usage description here
+$rake = new RAKE($stopwords);
+
+- `$stopwords` is content file `stopwords.json`
+
+$rake->extract($document);
+
+- `$document` is content you want to extract
 ```
 
 ### Testing
